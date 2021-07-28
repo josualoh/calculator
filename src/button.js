@@ -1,16 +1,19 @@
 import React from 'react'
 import { Text, StyleSheet, Pressable } from 'react-native'
-import { colors } from './globals'
+import { colors, text } from './globals'
 
-const Button = ({ onPress, title, secondary }) => {
-  // onPress={() => console.log('button clicked!')}
-  
+const Button = ({ onPress, input, secondary }) => {
   return (
     <Pressable
-      style={[styles.button, secondary && styles.secondaryButton]}
-      onPress={onPress}
+      style={
+        [
+          styles.button,
+          secondary && styles.secondaryButton
+        ]
+      }
+      onPress={() => onPress(input)}
     >
-      <Text style={[styles.text, secondary && styles.secondaryText]}>{title}</Text>
+      <Text style={styles.text}>{input}</Text>
     </Pressable>
   )
 }
@@ -29,14 +32,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.blue
   },
   text: {
-    fontSize: 40,
-    lineHeight: 21,
-    fontWeight: 'bold',
-    color: 'white',
-    paddingBottom: 4
-  },
-  secondaryText: {
-    paddingBottom: 8
+    ...text.big
   }
 })
 

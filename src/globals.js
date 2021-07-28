@@ -4,3 +4,16 @@ export const colors = {
   blue: '#4461d4',
   lightBlue: '#02cfc8'
 }
+
+export const text = {
+  big: {
+    fontSize: 40,
+    fontWeight: 'bold',
+    color: 'white'
+  },
+  small: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white'
+  }
+}

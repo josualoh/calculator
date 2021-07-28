@@ -2,26 +2,27 @@ import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import Button from './button'
 
-const Keyboard = () => {
+const Keyboard = ({ updateEquation, calculate }) => {
   return (
     <View style={{ flex: 3 }}>
       <View style={styles.container}>
-        <Button title={1} />
-        <Button title={2} />
-        <Button title={3} />
-        <Button title='+' secondary />
+        <Button input={1} onPress={updateEquation} />
+        <Button input={2} onPress={updateEquation} />
+        <Button input={3} onPress={updateEquation} />
+        <Button input='+' onPress={updateEquation} secondary />
+
       </View>
       <View style={styles.container}>
-        <Button title={4} />
-        <Button title={5} />
-        <Button title={6} />
-        <Button title='-' secondary />
+        <Button input={4} onPress={updateEquation} />
+        <Button input={5} onPress={updateEquation} />
+        <Button input={6} onPress={updateEquation} />
+        <Button input='-' onPress={updateEquation} secondary />
       </View>
       <View style={styles.container}>
-        <Button title={7} />
-        <Button title={8} />
-        <Button title={9} />
-        <Button title='=' secondary />
+        <Button input={7} onPress={updateEquation} />
+        <Button input={8} onPress={updateEquation} />
+        <Button input={9} onPress={updateEquation} />
+        <Button input='=' onPress={calculate} secondary />
       </View>
     </View>
   )
