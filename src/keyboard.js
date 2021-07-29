@@ -6,22 +6,21 @@ const Keyboard = ({ updateEquation, calculate }) => {
   return (
     <View style={{ flex: 3 }}>
       <View style={styles.container}>
-        <Button input={1} onPress={updateEquation} />
-        <Button input={2} onPress={updateEquation} />
-        <Button input={3} onPress={updateEquation} />
+        {
+          [1, 2, 3].map(digit => <Button key={digit} input={digit} onPress={updateEquation} />)
+        }
         <Button input='+' onPress={updateEquation} secondary />
-
       </View>
       <View style={styles.container}>
-        <Button input={4} onPress={updateEquation} />
-        <Button input={5} onPress={updateEquation} />
-        <Button input={6} onPress={updateEquation} />
+        {
+          [4, 5, 6].map(digit => <Button key={digit} input={digit} onPress={updateEquation} />)
+        }
         <Button input='-' onPress={updateEquation} secondary />
       </View>
       <View style={styles.container}>
-        <Button input={7} onPress={updateEquation} />
-        <Button input={8} onPress={updateEquation} />
-        <Button input={9} onPress={updateEquation} />
+        {
+          [7, 8, 9].map(digit => <Button key={digit} input={digit} onPress={updateEquation} />)
+        }
         <Button input='=' onPress={calculate} secondary />
       </View>
     </View>
